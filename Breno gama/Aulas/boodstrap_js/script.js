@@ -51,7 +51,7 @@ function renderizarCursos(lista) {
                                     <small class="text-secondary">
                                         ${curso.cargaHoraria}
                                     </small>
-                                    <span class="badge ${curso.ativo ? "text-bg-sucess" : "text-bg-secondary"} ">
+                                    <span class="badge ${curso.ativo ? "text-bg-success" : "text-bg-secondary"} ">
                                         ${curso.ativo ? "Ativo" : "Em breve"}
                                     </span>
                                 </div>
