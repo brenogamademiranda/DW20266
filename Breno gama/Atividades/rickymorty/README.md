@@ -1,71 +1,84 @@
-# Rick and Morty App 🌀
+# 🌀 Rick and Morty App
 
-Aplicação Vue 3 que consome a [API pública do Rick and Morty](https://rickandmortyapi.com/) e exibe os personagens da série em cards responsivos.
+> Aplicação Vue 3 que consome a API pública do Rick and Morty e exibe os personagens da série em cards responsivos.
 
-## 📋 Descrição
+---
 
-Este projeto lista os personagens da série Rick and Morty com:
+## 📸 Prints da Aplicação
 
-- **Nome**, **foto** e **localização** de cada personagem
-- **Indicador visual de status**: ponto 🟢 verde (Vivo), 🔴 vermelho (Morto) ou ⚪ cinza (Desconhecido)
-- **Paginação funcional** usando os links `info.next` e `info.prev` retornados pela API
+### Tela de listagem dos personagens com cards
+
+![Listagem de personagens](./docs/print-listagem.png)
+
+### Indicação visual de status — Vivo / Morto / Desconhecido
+
+![Indicação de status vivo/morto](./docs/print-status.png)
+
+> 🟢 **Vivo** — ponto verde | 🔴 **Morto** — ponto vermelho | ⚪ **Desconhecido** — ponto cinza
+
+---
+
+## 📋 Descrição do Projeto
+
+Este projeto foi desenvolvido para a disciplina de **Desenvolvimento Web** e consiste em uma listagem de personagens da série *Rick and Morty* utilizando a [API pública oficial](https://rickandmortyapi.com/).
+
+### Funcionalidades
+
+- Listagem de personagens em cards responsivos
+- Cada card exibe: **foto**, **nome**, **espécie**, **localização** e **origem**
+- **Indicador visual de status**: ponto colorido diferenciando personagens **Vivos** (🟢), **Mortos** (🔴) e **Desconhecidos** (⚪)
 - **Estado de carregamento** (loading) com animação enquanto os dados são buscados
+- **Paginação funcional** usando os links `info.next` e `info.prev` retornados pela API *(bônus)*
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia | Uso |
+| Tecnologia | Descrição |
 |---|---|
-| **Vue 3** (Vue CLI) | Framework principal — `createApp`, SFCs, `data()`, `methods`, `props`, `emits`, `created`, `v-for`, `v-if`, `v-show`, `v-bind`, `v-on` |
-| **Bootstrap 5** (CDN) | Grid responsivo (`row`, `col-md-6`, `col-lg-4`, `g-4`), utilitários e botões |
-| **CSS Scoped** | Estilização isolada por componente com Flexbox e Media Queries |
+| **Vue 3** (Vue CLI) | Framework principal |
+| **Bootstrap 5** (CDN) | Grid responsivo e componentes visuais |
+| **CSS Scoped** | Estilização isolada por componente |
 | **Fetch API** | Consumo da API com `async/await` |
 | **Google Fonts** | Tipografia (Outfit) |
+
+### Conceitos Vue 3 aplicados
+
+- `createApp` + Single File Components (`.vue`)
+- `data()` e `methods`
+- `props` para comunicação entre componentes
+- Lifecycle hook `created` para busca inicial de dados
+- Diretivas: `v-if` / `v-else`, `v-for` + `:key`, `v-show`, `v-bind` (`:class`, `:src`), `v-on` (`@click`)
+- `fetch` + `async/await` com estado de carregamento (`loading`)
+- CSS Scoped com Flexbox e Media Queries
+
+---
 
 ## 📁 Estrutura do Projeto
 
 ```
 rickymorty/
+├── docs/
+│   ├── print-listagem.png        ← Print da listagem de cards
+│   └── print-status.png          ← Print do indicador de status
 ├── public/
-│   └── index.html            # Bootstrap 5 CDN incluído aqui
+│   └── index.html                ← Bootstrap 5 CDN incluído aqui
 ├── src/
-│   ├── main.js               # createApp(App).mount('#app')
-│   ├── App.vue               # Header, Hero, Main, Footer
+│   ├── main.js                   ← createApp(App).mount('#app')
+│   ├── App.vue                   ← Estrutura principal (header, main, footer)
 │   └── components/
-│       ├── CardPersonagem.vue          # Card individual (props + v-bind:class)
-│       └── ListaPersonagensComponent.vue  # Lista + fetch + paginação
+│       ├── CardPersonagem.vue              ← Card individual do personagem
+│       └── ListaPersonagensComponent.vue   ← Lista + fetch + paginação
 ├── package.json
 └── README.md
 ```
 
-## 🚀 Como Rodar Localmente
+---
 
-### Pré-requisitos
+## 🔌 API Utilizada
 
-- [Node.js](https://nodejs.org/) v14 ou superior
-- npm (incluído no Node.js)
+**Endpoint:** `GET https://rickandmortyapi.com/api/character`
 
-### Passos
-
-```bash
-# 1. Acesse a pasta do projeto
-cd rickymorty
-
-# 2. Instale as dependências
-npm install
-
-# 3. Inicie o servidor de desenvolvimento
-npm run serve
-```
-
-O projeto estará disponível em: **http://localhost:8080**
-
-## 🔌 Endpoint da API
-
-```
-GET https://rickandmortyapi.com/api/character
-```
-
-**Exemplo de resposta:**
 ```json
 {
   "info": {
@@ -88,14 +101,30 @@ GET https://rickandmortyapi.com/api/character
 }
 ```
 
-## 📸 Prints Obrigatórios
+---
 
-### Tela de listagem dos personagens com cards
-> *(inserir print aqui)*
+## 🚀 Como Rodar Localmente
 
-### Destaque do ícone de status (vivo / morto)
-> *(inserir print aqui)*
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) v14 ou superior
+- npm (incluído no Node.js)
+
+### Passo a passo
+
+```bash
+# 1. Clone o repositório ou acesse a pasta do projeto
+cd "Breno gama/Atividades/rickymorty"
+
+# 2. Instale as dependências
+npm install
+
+# 3. Inicie o servidor de desenvolvimento
+npm run serve
+```
+
+Acesse em: **http://localhost:8080**
 
 ---
 
-Desenvolvido para a disciplina de **Desenvolvimento Web** · Vue 3 + Rick and Morty API
+Desenvolvido por **Breno Gama de Miranda** · Disciplina de Desenvolvimento Web
